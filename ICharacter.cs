@@ -1,5 +1,4 @@
 ﻿using MongoDB.Bson;
-using System.ComponentModel;
 
 namespace MongoWPF
 {
@@ -9,7 +8,8 @@ namespace MongoWPF
         string Name { get; set; }
         string ClassName { get;}
         int Expirience { get; set; }
-        int Level { get;}
+        int Level { get; set; }
+        int UnSpentedStatPoints { get; set; }
 
         int Strength { get; set; }
         int Dexterity { get; set; }
@@ -33,5 +33,7 @@ namespace MongoWPF
         int MagicDefence { get; }
         int CritChanse { get; }
         int CritDamage { get; }
+
+        void OnExpUpdate();
     }
 }

@@ -113,5 +113,10 @@
                 <TextBlock Margin="0 0 10 0" x:Name="CritDmgTb" Text="{Binding CritDamage}"></TextBlock>
             </StackPanel>
         </StackPanel>
+        <StackPanel x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 100">
+            <Button Margin="0 0 10 0" x:Name="Add100ExpBtn" Click="Add100ExpBtn_Click">+100</Button>
+            <Button Margin="0 0 10 0" x:Name="Add500ExpBtn" Click="Add500ExpBtn_Click">+500</Button>
+            <Button x:Name="Add1000ExpBtn" Click="Add1000ExpBtn_Click">+1000</Button>
+        </StackPanel>
     </Grid>
 </Window>

@@ -10,8 +10,27 @@ namespace MongoWPF
         public ObjectId Id { get => _id; set => _id = value; }
         public string Name { get; set; }
         public string ClassName => "Rogue";
-        public int Expirience { get; set; }
-        public int Level { get; }
+        private int expirience;
+        public int Expirience
+        {
+            get => expirience;
+            set
+            {
+                expirience = value;
+                OnExpUpdate();
+            }
+        }
+        private int level;
+        public int Level
+        {
+            get => level;
+            set
+            {
+                UnSpentedStatPoints += (value - level) * 5;
+                level = value;
+            }
+        }
+        public int UnSpentedStatPoints { get; set; }
 
         public int Strength { get; set; }
         public int Dexterity { get; set; }
@@ -49,6 +68,15 @@ namespace MongoWPF
             Dexterity = MinDexterity;
             Intelligence = MinIntelligence;
             Vitality = MinVitality;
+            Level = 1;
+        }
+
+        public void OnExpUpdate()
+        {
+            while (Expirience > this.TotalExpForNextLvl())
+            {
+                Level++;
+            }
         }
     }
 }

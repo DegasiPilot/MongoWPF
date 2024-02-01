@@ -112,5 +112,23 @@ namespace MongoWPF
             StatPanel.IsEnabled = true;
             ClassChoisePanel.IsEnabled = false;
         }
+
+        private void Add100ExpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Character.Expirience += 100;
+            CurrentExpText.Text = Character.Expirience.ToString();
+        }
+
+        private void Add500ExpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Character.Expirience += 500;
+            CurrentExpText.Text = Character.Expirience.ToString();
+        }
+
+        private void Add1000ExpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Character.Expirience += 1000;
+            CurrentExpText.Text = Character.Expirience.ToString();
+        }
     }
 }
