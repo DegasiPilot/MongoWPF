@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:MongoWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="RightAlign">
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
