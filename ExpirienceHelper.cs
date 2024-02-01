@@ -17,7 +17,7 @@ namespace MongoWPF
 
         public static int TotalExpForNextLvl(this ICharacter character)
         {
-            return TotalExpForLvl(character.Level);
+            return TotalExpForLvl(character.Level + 1);
         }
 
         public static int TotalExpForLvl(int level)

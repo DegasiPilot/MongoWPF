@@ -73,7 +73,7 @@ namespace MongoWPF
 
         public void OnExpUpdate()
         {
-            while (Expirience > this.TotalExpForNextLvl())
+            while (Expirience >= this.TotalExpForNextLvl())
             {
                 Level++;
             }

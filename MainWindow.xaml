@@ -12,11 +12,11 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Level: "></TextBlock>
-                        <TextBlock Name="lvlTB">1</TextBlock>
+                        <TextBlock Name="lvlTB" Text="{Binding Level}"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Exp: "></TextBlock>
-                        <TextBlock Text="0" x:Name="CurrentExpText"></TextBlock>
+                        <TextBlock x:Name="CurrentExpText" Text="{Binding Expirience}"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="10 0 0 0" Orientation="Vertical" x:Name="ClassChoisePanel">
@@ -71,7 +71,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                 <TextBlock TextAlignment="Center" Width="70" TextWrapping="Wrap">Stat Points Remaining</TextBlock>
-                <TextBlock Margin="10 0 0 0" x:Name="statPointsTb">example</TextBlock>
+                <TextBlock Margin="10 0 0 0" x:Name="statPointsTb" Text="{Binding UnSpentedStatPoints}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Margin="0 0 10 0" Name="applyPointsBtn" Click="applyPointsBtn_Click">Apply</Button>
@@ -113,7 +113,7 @@
                 <TextBlock Margin="0 0 10 0" x:Name="CritDmgTb" Text="{Binding CritDamage}"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 100">
+        <StackPanel IsEnabled="False" x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 100">
             <Button Margin="0 0 10 0" x:Name="Add100ExpBtn" Click="Add100ExpBtn_Click">+100</Button>
             <Button Margin="0 0 10 0" x:Name="Add500ExpBtn" Click="Add500ExpBtn_Click">+500</Button>
             <Button x:Name="Add1000ExpBtn" Click="Add1000ExpBtn_Click">+1000</Button>
