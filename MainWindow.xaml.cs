@@ -26,24 +26,48 @@ namespace MongoWPF
             Character = classList[0];
             DataContext = Character;
             currentStatPointsAmount = Character.UnSpentedStatPoints;
+            _oldStrength = Character.Strength;
+            _oldDexterity = Character.Dexterity;
+            _oldIntelligence = Character.Intelligence;
+            _oldVitality = Character.Vitality;
+
+            Binding statPointsBinding = new Binding("statPointsAsString");
+            statPointsBinding.Source = this;
+            BindingOperations.SetBinding(statPointsTb, TextBlock.TextProperty, statPointsBinding);
+            BindingExpression statPointsExpression = statPointsTb.GetBindingExpression(TextBlock.TextProperty);
+
+            Binding addExpPanelBinding = new Binding("CanAddExp");
+            addExpPanelBinding.Source = this;
+            BindingOperations.SetBinding(ExpBtnPanel, IsEnabledProperty, addExpPanelBinding);
+            BindingExpression addExpPanelExpression = ExpBtnPanel.GetBindingExpression(IsEnabledProperty);
+            DataContextChanged += (object sender, DependencyPropertyChangedEventArgs e) =>
+            {
+                statPointsExpression.UpdateTarget();
+                addExpPanelExpression.UpdateTarget();
+            };
         }
 
         public ICharacter Character { get; set; }
 
         private List<ICharacter> classList = new List<ICharacter>() { new Warrior(), new Rogue(), new Wizard() };
 
-        private int currentStatPointsAmount;
-        private int _newStrength;
-        private int _newDexterity;
-        private int _newIntelligence;
-        private int _newVitality;
+        public int currentStatPointsAmount;
+        private int _oldStrength;
+        private int _oldDexterity;
+        private int _oldIntelligence;
+        private int _oldVitality;
+
+        public string statPointsAsString => currentStatPointsAmount.ToString();
+        public bool CanAddExp => Character.UnSpentedStatPoints == currentStatPointsAmount;
 
         private void strMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Strength > Character.MinStrength)
+            if (Character.Strength > _oldStrength)
             {
-                strTB.Text = (--Character.Strength).ToString();
-                statPointsTb.Text = (++currentStatPointsAmount).ToString();
+                Character.Strength--;
+                currentStatPointsAmount++;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
@@ -51,35 +75,44 @@ namespace MongoWPF
         {
             if (Character.Strength < Character.MaxStrength && currentStatPointsAmount > 0)
             {
-                strTB.Text = (++Character.Strength).ToString();
-                statPointsTb.Text = (--currentStatPointsAmount).ToString();
+                Character.Strength++;
+                currentStatPointsAmount--;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
         private void dexMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Dexterity > Character.MinDexterity)
+            if (Character.Dexterity > _oldDexterity)
             {
-                dexTB.Text = (--Character.Dexterity).ToString();
-                statPointsTb.Text = (++currentStatPointsAmount).ToString();
+                Character.Dexterity--;
+                currentStatPointsAmount++;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
         private void dexPlusBtn_Click(object sender, RoutedEventArgs e)
         {
             if (Character.Dexterity < Character.MaxDexterity && currentStatPointsAmount > 0)
-            { 
-                dexTB.Text = (++Character.Dexterity).ToString();
-                statPointsTb.Text = (--currentStatPointsAmount).ToString();
+            {
+                Character.Dexterity++;
+                currentStatPointsAmount--;
+                ExpBtnPanel.IsEnabled = false;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
         private void intMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Intelligence > Character.MinIntelligence)
+            if (Character.Intelligence > _oldIntelligence)
             {
-                intTB.Text = (--Character.Intelligence).ToString();
-                statPointsTb.Text = (++currentStatPointsAmount).ToString();
+                Character.Intelligence--;
+                currentStatPointsAmount++;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
@@ -87,17 +120,21 @@ namespace MongoWPF
         {
             if (Character.Intelligence < Character.MaxIntelligence && currentStatPointsAmount > 0)
             {
-                intTB.Text = (++Character.Intelligence).ToString();
-                statPointsTb.Text = (--currentStatPointsAmount).ToString();
+                Character.Intelligence++;
+                currentStatPointsAmount--;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
         private void vitMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Vitality > Character.MinVitality)
+            if (Character.Vitality > _oldVitality)
             {
-                vitTB.Text = (--Character.Vitality).ToString();
-                statPointsTb.Text = (++currentStatPointsAmount).ToString();
+                Character.Vitality--;
+                currentStatPointsAmount++;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
@@ -105,8 +142,10 @@ namespace MongoWPF
         {
             if (Character.Vitality < Character.MaxVitality && currentStatPointsAmount > 0)
             {
-                vitTB.Text = (++Character.Vitality).ToString();
-                statPointsTb.Text = (--currentStatPointsAmount).ToString();
+                Character.Vitality++;
+                currentStatPointsAmount--;
+                DataContext = null;
+                DataContext = Character;
             }
         }
 
@@ -131,39 +170,55 @@ namespace MongoWPF
         private void applyPointsBtn_Click(object sender, RoutedEventArgs e)
         {
             Character.UnSpentedStatPoints = currentStatPointsAmount;
+            _oldStrength = Character.Strength;
+            _oldDexterity = Character.Dexterity;
+            _oldIntelligence = Character.Intelligence;
+            _oldVitality = Character.Vitality;
+            Character.UnSpentedStatPoints = currentStatPointsAmount;
+
             DataContext = null;
             DataContext = Character;
         }
 
         private void resetPointsBtn_Click(object sender, RoutedEventArgs e)
         {
+            Character.Strength = _oldStrength;
+            Character.Dexterity = _oldDexterity;
+            Character.Intelligence = _oldIntelligence;
+            Character.Vitality = _oldVitality;
+            currentStatPointsAmount = Character.UnSpentedStatPoints;
 
+            DataContext = null;
+            DataContext = Character;
         }
 
         private void SubmitClassBtn_Click(object sender, RoutedEventArgs e)
         {
             StatPanel.IsEnabled = true;
             ClassChoisePanel.IsEnabled = false;
-            ExpBtnPanel.IsEnabled = true;
         }
 
         private void Add100ExpBtn_Click(object sender, RoutedEventArgs e)
         {
             Character.Expirience += 100;
-            DataContext = null;
-            DataContext = Character;
+            OnExpUpdate();
         }
 
         private void Add500ExpBtn_Click(object sender, RoutedEventArgs e)
         {
             Character.Expirience += 500;
-            DataContext = null;
-            DataContext = Character;
+            OnExpUpdate();
         }
 
         private void Add1000ExpBtn_Click(object sender, RoutedEventArgs e)
         {
             Character.Expirience += 1000;
+            OnExpUpdate();
+        }
+
+        private void OnExpUpdate()
+        {
+            currentStatPointsAmount = Character.UnSpentedStatPoints;
             DataContext = null;
             DataContext = Character;
         }
