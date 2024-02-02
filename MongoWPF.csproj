@@ -121,10 +121,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Character.cs" />
+    <Compile Include="CharacterRedactorPage.xaml.cs">
+      <DependentUpon>CharacterRedactorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpirienceHelper.cs" />
     <Compile Include="Rogue.cs" />
     <Compile Include="Warrior.cs" />
     <Compile Include="Wizard.cs" />
+    <Page Include="CharacterRedactorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -133,7 +141,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ICharacter.cs" />
     <Compile Include="CRUD.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
