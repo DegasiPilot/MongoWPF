@@ -126,10 +126,17 @@
       <DependentUpon>CharacterRedactorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExpirienceHelper.cs" />
+    <Compile Include="LoadCharacterPage.xaml.cs">
+      <DependentUpon>LoadCharacterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rogue.cs" />
     <Compile Include="Warrior.cs" />
     <Compile Include="Wizard.cs" />
     <Page Include="CharacterRedactorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadCharacterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

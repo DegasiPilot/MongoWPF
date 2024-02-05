@@ -1,7 +1,9 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace MongoWPF
 {
+    [BsonKnownTypes(typeof(Warrior), typeof(Rogue), typeof(Wizard))]
     public abstract class Character
     {
         public ObjectId Id { get; set; }

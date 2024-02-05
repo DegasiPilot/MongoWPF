@@ -23,7 +23,15 @@ namespace MongoWPF
         public CharacterRedactorPage()
         {
             InitializeComponent();
-            Character = classList[0];
+            if (App.CurrentCharacter == null)
+            {
+                Character = classList[0];
+                App.CurrentCharacter = Character;
+            }
+            else
+            {
+                Character = App.CurrentCharacter;
+            }
             DataContext = Character;
             currentStatPointsAmount = Character.UnSpentedStatPoints;
             _oldStrength = Character.Strength;
@@ -225,7 +233,8 @@ namespace MongoWPF
 
         private void ResetBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.MainFrame.Navigate(new Uri("CharacterRedactorPage.xaml", UriKind.Relative));
+            App.CurrentCharacter = null;
+            App.MainFrame.NavigationService.Refresh();
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -253,6 +262,11 @@ namespace MongoWPF
             {
                 MessageBox.Show("Имя пустое!");
             }
+        }
+
+        private void LoadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainFrame.Navigate(new Uri("LoadCharacterPage.xaml", UriKind.Relative));
         }
     }
 }

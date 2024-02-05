@@ -9,5 +9,6 @@ namespace MongoWPF
     public partial class App : Application
     {
         public static Frame MainFrame;
+        public static Character CurrentCharacter;
     }
 }
