@@ -31,6 +31,7 @@ namespace MongoWPF
             else
             {
                 Character = App.CurrentCharacter;
+                SubmitClassBtn_Click(null, null);
             }
             DataContext = Character;
             currentStatPointsAmount = Character.UnSpentedStatPoints;
@@ -204,6 +205,9 @@ namespace MongoWPF
         {
             StatPanel.IsEnabled = true;
             ClassChoisePanel.IsEnabled = false;
+            SaveBtn.IsEnabled = true;
+            ResetBtn.IsEnabled = true;
+            DeleteBtn.IsEnabled = true;
         }
 
         private void Add100ExpBtn_Click(object sender, RoutedEventArgs e)
@@ -245,16 +249,18 @@ namespace MongoWPF
                 if (characterAtDb != null)
                 {
                     CRUD.RedactCharacter(Character);
+                    MessageBox.Show("Персонаж успешно изменен!");
                 }
                 else
                 {
                     if (CRUD.IsExistCharacterName(Character.Name))
                     {
-                        MessageBox.Show("Имя уже существует!");
+                        MessageBox.Show("Имя уже существует! Если вы хотите редактировать существующего персонажа выберите Загрузить");
                     }
                     else
                     {
                         CRUD.CreateCharacter(Character);
+                        MessageBox.Show("Персонаж успешно создан!");
                     }
                 }
             }
@@ -267,6 +273,18 @@ namespace MongoWPF
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
             App.MainFrame.Navigate(new Uri("LoadCharacterPage.xaml", UriKind.Relative));
+        }
+
+        private void DeleteBtnBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (CRUD.TryDeleteCharacter(Character.Id))
+            {
+                MessageBox.Show("Персонаж успешно удален!");
+            }
+            else
+            {
+                MessageBox.Show("Этот персонаж еще не создан!");
+            }
         }
     }
 }

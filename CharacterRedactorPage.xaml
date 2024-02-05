@@ -121,9 +121,10 @@
             <Button x:Name="Add1000ExpBtn" Click="Add1000ExpBtn_Click">+1000</Button>
         </StackPanel>
         <StackPanel x:Name="SaveLoadPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
-            <Button Margin="0 0 10 0" x:Name="SaveBtn" Click="SaveBtn_Click">Сохранить</Button>
+            <Button Margin="0 0 10 0" x:Name="SaveBtn" Click="SaveBtn_Click" IsEnabled="False">Сохранить</Button>
             <Button Margin="0 0 10 0" x:Name="LoadBtn" Click="LoadBtn_Click">Загрузить</Button>
-            <Button x:Name="ResetBtn" Click="ResetBtn_Click">Сбросить</Button>
+            <Button Margin="0 0 10 0" x:Name="ResetBtn" Click="ResetBtn_Click" IsEnabled="False">Сбросить</Button>
+            <Button x:Name="DeleteBtn" Click="DeleteBtnBtn_Click" IsEnabled="False">Удалить</Button>
         </StackPanel>
     </Grid>
 </Page>

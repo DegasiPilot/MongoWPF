@@ -40,6 +40,12 @@ namespace MongoWPF
             return collection.Find(x => x.Name == name).CountDocuments() > 0;
         }
 
+        public static bool TryDeleteCharacter(ObjectId id)
+        {
+            var collection = GetCharactersCollection();
+            return collection.DeleteOne(x => x.Id == id).DeletedCount > 0;
+        }
+
         private static IMongoCollection<Character> GetCharactersCollection()
         {
             var client = new MongoClient("mongodb://localhost");
