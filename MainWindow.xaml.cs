@@ -24,7 +24,7 @@ namespace MongoWPF
         {
             InitializeComponent();
             App.MainFrame = MainFrame;
-            MainFrame.Navigate(new Uri("CharacterRedactorPage.xaml", UriKind.Relative));
+            MainFrame.Navigate(new Uri("Pages/CharacterRedactorPage.xaml", UriKind.Relative));
         }
     }
 }

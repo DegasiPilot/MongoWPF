@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MongoWPF.Weapons;
 
 namespace MongoWPF
 {
@@ -276,7 +277,7 @@ namespace MongoWPF
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.MainFrame.Navigate(new Uri("LoadCharacterPage.xaml", UriKind.Relative));
+            App.MainFrame.Navigate(new Uri("Pages/LoadCharacterPage.xaml", UriKind.Relative));
         }
 
         private void DeleteBtnBtn_Click(object sender, RoutedEventArgs e)

@@ -29,13 +29,13 @@ namespace MongoWPF
             else
             {
                 App.CurrentCharacter = character;
-                App.MainFrame.Navigate(new Uri("CharacterRedactorPage.xaml", UriKind.Relative));
+                App.MainFrame.Navigate(new Uri("Pages/CharacterRedactorPage.xaml", UriKind.Relative));
             }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.MainFrame.Navigate(new Uri("CharacterRedactorPage.xaml", UriKind.Relative));
+            App.MainFrame.Navigate(new Uri("Pages/CharacterRedactorPage.xaml", UriKind.Relative));
         }
     }
 }

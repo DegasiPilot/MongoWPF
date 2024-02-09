@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MongoWPF
+namespace MongoWPF.Weapons
 {
     internal class Wand : Weapon
     {

@@ -1,11 +1,13 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MongoWPF
+namespace MongoWPF.Weapons
 {
+    [BsonKnownTypes(typeof(Fist), typeof(Axe), typeof(Dagger), typeof(Hammer), typeof(Wand))]
     public abstract class Weapon
     {
         public static Dictionary<WeaponRarity, int> RarityBonuses = new Dictionary<WeaponRarity, int>()

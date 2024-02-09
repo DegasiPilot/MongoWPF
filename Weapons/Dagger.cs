@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace MongoWPF.Weapons
 {
-    internal class Fist : Weapon
+    internal class Dagger : Weapon
     {
-        public override string Name => "Кулак";
+        public override string Name => "Dagger";
 
         public override int Strength => 0;
 
-        public override int Dexterity => 0;
+        public override int Dexterity => 5 + RarityBonuses[Rarity];
 
         public override int Intelligence => 0;
 
@@ -22,7 +22,7 @@ namespace MongoWPF.Weapons
 
         public override int MaxMana => 0;
 
-        public override int PhysicalDamage => 0;
+        public override int PhysicalDamage => 3 + RarityBonuses[Rarity];
 
         public override int Armor => 0;
 
@@ -30,8 +30,8 @@ namespace MongoWPF.Weapons
 
         public override int MagicDefence => 0;
 
-        public override int CritChanse => 0;
+        public override int CritChanse => 60;
 
-        public override int CritDamage => 0;
+        public override int CritDamage => 70;
     }
 }

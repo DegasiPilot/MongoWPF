@@ -131,6 +131,9 @@
       <DependentUpon>LoadCharacterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rogue.cs" />
+    <Compile Include="Weapons\Axe.cs" />
+    <Compile Include="Weapons\Dagger.cs" />
+    <Compile Include="Weapons\Hammer.cs" />
     <Compile Include="Weapons\Wand.cs" />
     <Compile Include="Warrior.cs" />
     <Compile Include="Weapons\Weapon.cs" />
