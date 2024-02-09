@@ -32,5 +32,10 @@ namespace MongoWPF
                 App.MainFrame.Navigate(new Uri("CharacterRedactorPage.xaml", UriKind.Relative));
             }
         }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainFrame.Navigate(new Uri("CharacterRedactorPage.xaml", UriKind.Relative));
+        }
     }
 }

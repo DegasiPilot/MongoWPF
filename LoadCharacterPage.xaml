@@ -15,6 +15,7 @@
                 <TextBox Width="100" x:Name="CharacterNameTb"></TextBox>
             </StackPanel>
             <Button Margin="5 10 5 0" x:Name="LoadBtn" Click="LoadBtn_Click">Загрузить</Button>
+            <Button Margin="5 30 5 0" x:Name="BackBtn" Click="BackBtn_Click">Назад</Button>
         </StackPanel>
     </Grid>
 </Page>

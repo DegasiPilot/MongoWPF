@@ -130,7 +130,10 @@
       <DependentUpon>LoadCharacterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rogue.cs" />
+    <Compile Include="Wand.cs" />
     <Compile Include="Warrior.cs" />
+    <Compile Include="Weapon.cs" />
+    <Compile Include="WeaponRarity.cs" />
     <Compile Include="Wizard.cs" />
     <Page Include="CharacterRedactorPage.xaml">
       <SubType>Designer</SubType>

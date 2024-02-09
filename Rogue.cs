@@ -16,13 +16,13 @@ namespace MongoWPF
         public override int MaxIntelligence => 70;
         public override int MaxVitality => 80;
 
-        public override int MaxHealth => Vitality + Vitality / 2 + Strength / 2;
-        public override int MaxMana => Intelligence + Intelligence / 5;
-        public override int PhysicalDamage => Strength / 2 + Dexterity / 2;
-        public override int Armor => Dexterity + Dexterity / 2;
-        public override int MagicDamage => Intelligence / 5;
-        public override int MagicDefence => Intelligence / 2;
-        public override int CritChanse => Dexterity / 5;
-        public override int CritDamage => Dexterity / 10;
+        public override int BaseMaxHealth => Vitality + Vitality / 2 + Strength / 2;
+        public override int BaseMaxMana => Intelligence + Intelligence / 5;
+        public override int BasePhysicalDamage => Strength / 2 + Dexterity / 2;
+        public override int BaseArmor => Dexterity + Dexterity / 2;
+        public override int BaseMagicDamage => Intelligence / 5;
+        public override int BaseMagicDefence => Intelligence / 2;
+        public override int BaseCritChanse => Dexterity / 5;
+        public override int BaseCritDamage => Dexterity / 10;
     }
 }

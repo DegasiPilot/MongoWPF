@@ -35,10 +35,10 @@ namespace MongoWPF
             }
             DataContext = Character;
             currentStatPointsAmount = Character.UnSpentedStatPoints;
-            _oldStrength = Character.Strength;
-            _oldDexterity = Character.Dexterity;
-            _oldIntelligence = Character.Intelligence;
-            _oldVitality = Character.Vitality;
+            _oldStrength = Character.BaseStrength;
+            _oldDexterity = Character.BaseDexterity;
+            _oldIntelligence = Character.BaseIntelligence;
+            _oldVitality = Character.BaseVitality;
 
             Binding statPointsBinding = new Binding("statPointsAsString");
             statPointsBinding.Source = this;
@@ -71,9 +71,9 @@ namespace MongoWPF
 
         private void strMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Strength > _oldStrength)
+            if (Character.BaseStrength > _oldStrength)
             {
-                Character.Strength--;
+                Character.BaseStrength--;
                 currentStatPointsAmount++;
                 DataContext = null;
                 DataContext = Character;
@@ -82,9 +82,9 @@ namespace MongoWPF
 
         private void strPlusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Strength < Character.MaxStrength && currentStatPointsAmount > 0)
+            if (Character.BaseStrength < Character.MaxStrength && currentStatPointsAmount > 0)
             {
-                Character.Strength++;
+                Character.BaseStrength++;
                 currentStatPointsAmount--;
                 DataContext = null;
                 DataContext = Character;
@@ -93,9 +93,9 @@ namespace MongoWPF
 
         private void dexMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Dexterity > _oldDexterity)
+            if (Character.BaseDexterity > _oldDexterity)
             {
-                Character.Dexterity--;
+                Character.BaseDexterity--;
                 currentStatPointsAmount++;
                 DataContext = null;
                 DataContext = Character;
@@ -104,9 +104,9 @@ namespace MongoWPF
 
         private void dexPlusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Dexterity < Character.MaxDexterity && currentStatPointsAmount > 0)
+            if (Character.BaseDexterity < Character.MaxDexterity && currentStatPointsAmount > 0)
             {
-                Character.Dexterity++;
+                Character.BaseDexterity++;
                 currentStatPointsAmount--;
                 ExpBtnPanel.IsEnabled = false;
                 DataContext = null;
@@ -116,9 +116,9 @@ namespace MongoWPF
 
         private void intMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Intelligence > _oldIntelligence)
+            if (Character.BaseIntelligence > _oldIntelligence)
             {
-                Character.Intelligence--;
+                Character.BaseIntelligence--;
                 currentStatPointsAmount++;
                 DataContext = null;
                 DataContext = Character;
@@ -127,9 +127,9 @@ namespace MongoWPF
 
         private void intPlusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Intelligence < Character.MaxIntelligence && currentStatPointsAmount > 0)
+            if (Character.BaseIntelligence < Character.MaxIntelligence && currentStatPointsAmount > 0)
             {
-                Character.Intelligence++;
+                Character.BaseIntelligence++;
                 currentStatPointsAmount--;
                 DataContext = null;
                 DataContext = Character;
@@ -138,9 +138,9 @@ namespace MongoWPF
 
         private void vitMinusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Vitality > _oldVitality)
+            if (Character.BaseVitality > _oldVitality)
             {
-                Character.Vitality--;
+                Character.BaseVitality--;
                 currentStatPointsAmount++;
                 DataContext = null;
                 DataContext = Character;
@@ -149,9 +149,9 @@ namespace MongoWPF
 
         private void vitPlusBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Character.Vitality < Character.MaxVitality && currentStatPointsAmount > 0)
+            if (Character.BaseVitality < Character.MaxVitality && currentStatPointsAmount > 0)
             {
-                Character.Vitality++;
+                Character.BaseVitality++;
                 currentStatPointsAmount--;
                 DataContext = null;
                 DataContext = Character;
@@ -179,10 +179,10 @@ namespace MongoWPF
         private void applyPointsBtn_Click(object sender, RoutedEventArgs e)
         {
             Character.UnSpentedStatPoints = currentStatPointsAmount;
-            _oldStrength = Character.Strength;
-            _oldDexterity = Character.Dexterity;
-            _oldIntelligence = Character.Intelligence;
-            _oldVitality = Character.Vitality;
+            _oldStrength = Character.BaseStrength;
+            _oldDexterity = Character.BaseDexterity;
+            _oldIntelligence = Character.BaseIntelligence;
+            _oldVitality = Character.BaseVitality;
             Character.UnSpentedStatPoints = currentStatPointsAmount;
 
             DataContext = null;
@@ -191,10 +191,10 @@ namespace MongoWPF
 
         private void resetPointsBtn_Click(object sender, RoutedEventArgs e)
         {
-            Character.Strength = _oldStrength;
-            Character.Dexterity = _oldDexterity;
-            Character.Intelligence = _oldIntelligence;
-            Character.Vitality = _oldVitality;
+            Character.BaseStrength = _oldStrength;
+            Character.BaseDexterity = _oldDexterity;
+            Character.BaseIntelligence = _oldIntelligence;
+            Character.BaseVitality = _oldVitality;
             currentStatPointsAmount = Character.UnSpentedStatPoints;
 
             DataContext = null;
