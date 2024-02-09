@@ -10,7 +10,7 @@ namespace MongoWPF.Weapons
     {
         public override string Name => "WarHammer";
 
-        public override int Strength => 5;
+        public override int Strength => 5 + RarityBonuses[Rarity];
 
         public override int Dexterity => 0;
 
@@ -18,11 +18,11 @@ namespace MongoWPF.Weapons
 
         public override int Vitality => 0;
 
-        public override int MaxHealth => 5;
+        public override int MaxHealth => 5 + RarityBonuses[Rarity];
 
         public override int MaxMana => 0;
 
-        public override int PhysicalDamage => 8;
+        public override int PhysicalDamage => 8 + RarityBonuses[Rarity];
 
         public override int Armor => 0;
 
@@ -33,5 +33,9 @@ namespace MongoWPF.Weapons
         public override int CritChanse => 10;
 
         public override int CritDamage => 250;
+
+        public override bool IsShieldAvaliable => !IsTwoHanded;
+
+        public override bool IsDualAvaliable => false;
     }
 }

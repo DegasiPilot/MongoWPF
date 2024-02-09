@@ -10,9 +10,9 @@ namespace MongoWPF.Weapons
     {
         public override string Name => "Sword";
 
-        public override int Strength => 3;
+        public override int Strength => 3 + RarityBonuses[Rarity];
 
-        public override int Dexterity => 3;
+        public override int Dexterity => 3 + RarityBonuses[Rarity];
 
         public override int Intelligence => 0;
 
@@ -22,7 +22,7 @@ namespace MongoWPF.Weapons
 
         public override int MaxMana => 0;
 
-        public override int PhysicalDamage => 5;
+        public override int PhysicalDamage => 5 + RarityBonuses[Rarity];
 
         public override int Armor => 0;
 
@@ -33,5 +33,9 @@ namespace MongoWPF.Weapons
         public override int CritChanse => 35;
 
         public override int CritDamage => 150;
+
+        public override bool IsShieldAvaliable => !IsTwoHanded;
+
+        public override bool IsDualAvaliable => false;
     }
 }

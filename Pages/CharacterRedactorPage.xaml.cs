@@ -35,7 +35,10 @@ namespace MongoWPF
                 Character = App.CurrentCharacter;
                 SubmitClassBtn_Click(null, null);
             }
-            WeaponCb.SelectedIndex = (WeaponCb.ItemsSource as List<Weapon>).FindIndex(x => x.Name == Character.Weapon.Name);
+            int weaponIndex = (WeaponCb.ItemsSource as List<Weapon>).FindIndex(x => x.Name == Character.Weapon.Name);
+            weaponList[weaponIndex] = Character.Weapon;
+            WeaponCb.SelectedIndex = weaponIndex;
+            RarityTb.Text = Character.Weapon.Rarity.ToString();
             DataContext = Character;
             currentStatPointsAmount = Character.UnSpentedStatPoints;
             _oldStrength = Character.BaseStrength;
@@ -297,23 +300,28 @@ namespace MongoWPF
             Character.Weapon = (WeaponCb.SelectedItem as Weapon);
             DataContext = null;
             DataContext = Character;
-            RarityTb.Text = Character.Weapon.Rarity.ToString();
         }
 
         private void DecreaseRarityBtn_Click(object sender, RoutedEventArgs e)
         {
             if((int)Character.Weapon.Rarity > 0)
             {
-                RarityTb.Text = (--Character.Weapon.Rarity).ToString();
+                Character.Weapon.Rarity--;
+                RarityTb.Text = Character.Weapon.Rarity.ToString();
             }
+            DataContext = null;
+            DataContext = Character;
         }
 
         private void IncreaseRarityBtn_Click(object sender, RoutedEventArgs e)
         {
             if ((int)Character.Weapon.Rarity < Enum.GetValues(typeof(WeaponRarity)).Length - 1)
             {
-                RarityTb.Text = (++Character.Weapon.Rarity).ToString();
+                Character.Weapon.Rarity++;
+                RarityTb.Text = Character.Weapon.Rarity.ToString();
             }
+            DataContext = null;
+            DataContext = Character;
         }
     }
 }
