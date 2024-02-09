@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 
 namespace MongoWPF
 {
-    internal class Wand : Weapon
+    internal class Fist : Weapon
     {
+        public override string Name => "Кулак";
+
         public override int Strength => 0;
 
         public override int Dexterity => 0;
 
-        public override int Intelligence => 5 + RarityBonuses[Rarity];
+        public override int Intelligence => 0;
 
         public override int Vitality => 0;
 
         public override int MaxHealth => 0;
 
-        public override int MaxMana => 5 + RarityBonuses[Rarity];
+        public override int MaxMana => 0;
 
-        public override int PhysicalDamage => 1 + RarityBonuses[Rarity];
+        public override int PhysicalDamage => 0;
 
         public override int Armor => 0;
 
-        public override int MagicDamage => 5 + RarityBonuses[Rarity];
+        public override int MagicDamage => 0;
 
         public override int MagicDefence => 0;
 

@@ -23,6 +23,7 @@ namespace MongoWPF
         public CharacterRedactorPage()
         {
             InitializeComponent();
+            WeaponCb.ItemsSource = weaponList;
             if (App.CurrentCharacter == null)
             {
                 Character = classList[0];
@@ -33,6 +34,7 @@ namespace MongoWPF
                 Character = App.CurrentCharacter;
                 SubmitClassBtn_Click(null, null);
             }
+            WeaponCb.SelectedIndex = (WeaponCb.ItemsSource as List<Weapon>).FindIndex(x => x.Name == Character.Weapon.Name);
             DataContext = Character;
             currentStatPointsAmount = Character.UnSpentedStatPoints;
             _oldStrength = Character.BaseStrength;
@@ -59,6 +61,7 @@ namespace MongoWPF
         public Character Character { get; set; }
 
         private List<Character> classList = new List<Character>() { new Warrior(), new Rogue(), new Wizard()};
+        private List<Weapon> weaponList = new List<Weapon>() {new Fist(), new Wand()};
 
         public int currentStatPointsAmount;
         private int _oldStrength;
@@ -208,6 +211,7 @@ namespace MongoWPF
             SaveBtn.IsEnabled = true;
             ResetBtn.IsEnabled = true;
             DeleteBtn.IsEnabled = true;
+            WeaponCb.IsEnabled = true;
         }
 
         private void Add100ExpBtn_Click(object sender, RoutedEventArgs e)
@@ -285,6 +289,13 @@ namespace MongoWPF
             {
                 MessageBox.Show("Этот персонаж еще не создан!");
             }
+        }
+
+        private void WeaponCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Character.Weapon = (WeaponCb.SelectedItem as Weapon);
+            DataContext = null;
+            DataContext = Character;
         }
     }
 }

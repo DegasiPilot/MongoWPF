@@ -122,24 +122,25 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Character.cs" />
-    <Compile Include="CharacterRedactorPage.xaml.cs">
+    <Compile Include="Pages\CharacterRedactorPage.xaml.cs">
       <DependentUpon>CharacterRedactorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExpirienceHelper.cs" />
-    <Compile Include="LoadCharacterPage.xaml.cs">
+    <Compile Include="Fist.cs" />
+    <Compile Include="Pages\LoadCharacterPage.xaml.cs">
       <DependentUpon>LoadCharacterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rogue.cs" />
-    <Compile Include="Wand.cs" />
+    <Compile Include="Weapons\Wand.cs" />
     <Compile Include="Warrior.cs" />
-    <Compile Include="Weapon.cs" />
+    <Compile Include="Weapons\Weapon.cs" />
     <Compile Include="WeaponRarity.cs" />
     <Compile Include="Wizard.cs" />
-    <Page Include="CharacterRedactorPage.xaml">
+    <Page Include="Pages\CharacterRedactorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoadCharacterPage.xaml">
+    <Page Include="Pages\LoadCharacterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

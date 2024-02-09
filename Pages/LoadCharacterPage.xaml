@@ -12,7 +12,7 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <Label>Имя персонажа</Label>
-                <TextBox Width="100" x:Name="CharacterNameTb"></TextBox>
+                <TextBox Width="100" x:Name="CharacterNameTb" TextAlignment="Center" VerticalContentAlignment="Center"></TextBox>
             </StackPanel>
             <Button Margin="5 10 5 0" x:Name="LoadBtn" Click="LoadBtn_Click">Загрузить</Button>
             <Button Margin="5 30 5 0" x:Name="BackBtn" Click="BackBtn_Click">Назад</Button>

@@ -115,12 +115,16 @@
                 <TextBlock Margin="0 0 10 0" x:Name="CritDmgTb" Text="{Binding CritDamage}"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel IsEnabled="False" x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 100">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 100" VerticalAlignment="Bottom">
+            <TextBlock>Оружие</TextBlock>
+            <ComboBox Margin="5 0 0 0" Width="100" x:Name="WeaponCb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged" IsEnabled="False"></ComboBox>
+        </StackPanel>
+        <StackPanel IsEnabled="False" x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 65">
             <Button Margin="0 0 10 0" x:Name="Add100ExpBtn" Click="Add100ExpBtn_Click">+100</Button>
             <Button Margin="0 0 10 0" x:Name="Add500ExpBtn" Click="Add500ExpBtn_Click">+500</Button>
             <Button x:Name="Add1000ExpBtn" Click="Add1000ExpBtn_Click">+1000</Button>
         </StackPanel>
-        <StackPanel x:Name="SaveLoadPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50">
+        <StackPanel x:Name="SaveLoadPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 30">
             <Button Margin="0 0 10 0" x:Name="SaveBtn" Click="SaveBtn_Click" IsEnabled="False">Сохранить</Button>
             <Button Margin="0 0 10 0" x:Name="LoadBtn" Click="LoadBtn_Click">Загрузить</Button>
             <Button Margin="0 0 10 0" x:Name="ResetBtn" Click="ResetBtn_Click" IsEnabled="False">Сбросить</Button>

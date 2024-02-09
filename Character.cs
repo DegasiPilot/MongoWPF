@@ -31,10 +31,10 @@ namespace MongoWPF
         }
 
         public int UnSpentedStatPoints { get; set; }
-        public int Strength => Weapon == null? BaseStrength : BaseStrength + Weapon.Strength;
-        public int Dexterity => Weapon == null ? BaseDexterity : BaseDexterity + Weapon.Dexterity;
-        public int Intelligence => Weapon == null ? BaseIntelligence : BaseIntelligence + Weapon.Intelligence;
-        public int Vitality => Weapon == null ? BaseVitality : BaseVitality + Weapon.Vitality;
+        public int Strength => BaseStrength + Weapon.Strength;
+        public int Dexterity => BaseDexterity + Weapon.Dexterity;
+        public int Intelligence => BaseIntelligence + Weapon.Intelligence;
+        public int Vitality => BaseVitality + Weapon.Vitality;
         public int BaseStrength { get; set; }
         public int BaseDexterity { get; set; }
         public int BaseIntelligence { get; set; }
@@ -47,14 +47,14 @@ namespace MongoWPF
         public abstract int MaxDexterity { get; }
         public abstract int MaxIntelligence { get; }
         public abstract int MaxVitality { get; }
-        public int MaxHealth => Weapon == null ? BaseMaxHealth : BaseMaxHealth + Weapon.MaxHealth;
-        public int MaxMana => Weapon == null ? BaseMaxMana : BaseMaxMana + Weapon.MaxMana;
-        public int PhysicalDamage => Weapon == null ? BasePhysicalDamage : BasePhysicalDamage + Weapon.PhysicalDamage;
-        public int Armor => Weapon == null ? BaseArmor : BaseArmor + Weapon.Armor;
-        public int MagicDamage => Weapon == null ? BaseMagicDamage : BaseMagicDamage + Weapon.MagicDamage;
-        public int MagicDefence => Weapon == null ? BaseMagicDefence : BaseMagicDefence + Weapon.MagicDefence;
-        public int CritChanse => Weapon == null ? BaseCritChanse : BaseCritChanse + Weapon.CritChanse;
-        public int CritDamage => Weapon == null ? BaseCritDamage : BaseCritDamage + Weapon.CritDamage;
+        public int MaxHealth => BaseMaxHealth + Weapon.MaxHealth;
+        public int MaxMana => BaseMaxMana + Weapon.MaxMana;
+        public int PhysicalDamage => BasePhysicalDamage + Weapon.PhysicalDamage;
+        public int Armor => BaseArmor + Weapon.Armor;
+        public int MagicDamage => BaseMagicDamage + Weapon.MagicDamage;
+        public int MagicDefence => BaseMagicDefence + Weapon.MagicDefence;
+        public int CritChanse => BaseCritChanse + Weapon.CritChanse;
+        public int CritDamage => BaseCritDamage + Weapon.CritDamage;
         public abstract int BaseMaxHealth { get; }
         public abstract int BaseMaxMana { get; }
         public abstract int BasePhysicalDamage { get; }
@@ -82,6 +82,7 @@ namespace MongoWPF
             BaseVitality = MinVitality;
             Level = 1;
             Name = "";
+            Weapon = new Fist();
         }
     }
 }

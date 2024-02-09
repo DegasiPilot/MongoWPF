@@ -15,6 +15,7 @@ namespace MongoWPF
             {WeaponRarity.Rare, 4 }
         };
 
+        public abstract string Name { get; }
         public WeaponRarity Rarity;
         public bool IsTwoHanded;
 
