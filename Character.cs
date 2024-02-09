@@ -49,12 +49,12 @@ namespace MongoWPF
         public abstract int MaxVitality { get; }
         public int MaxHealth => Weapon == null ? BaseMaxHealth : BaseMaxHealth + Weapon.MaxHealth;
         public int MaxMana => Weapon == null ? BaseMaxMana : BaseMaxMana + Weapon.MaxMana;
-        public int PhysicalDamage => Weapon == null ? PhysicalDamage : PhysicalDamage + Weapon.PhysicalDamage;
-        public int Armor => Weapon == null ? Armor : Armor + Weapon.Armor;
-        public int MagicDamage => Weapon == null ? MagicDamage : MagicDamage + Weapon.MagicDamage;
-        public int MagicDefence => Weapon == null ? MagicDefence : MagicDefence + Weapon.MagicDefence;
-        public int CritChanse => Weapon == null ? CritChanse : CritChanse + Weapon.CritChanse;
-        public int CritDamage => Weapon == null ? CritDamage : CritDamage + Weapon.CritDamage;
+        public int PhysicalDamage => Weapon == null ? BasePhysicalDamage : BasePhysicalDamage + Weapon.PhysicalDamage;
+        public int Armor => Weapon == null ? BaseArmor : BaseArmor + Weapon.Armor;
+        public int MagicDamage => Weapon == null ? BaseMagicDamage : BaseMagicDamage + Weapon.MagicDamage;
+        public int MagicDefence => Weapon == null ? BaseMagicDefence : BaseMagicDefence + Weapon.MagicDefence;
+        public int CritChanse => Weapon == null ? BaseCritChanse : BaseCritChanse + Weapon.CritChanse;
+        public int CritDamage => Weapon == null ? BaseCritDamage : BaseCritDamage + Weapon.CritDamage;
         public abstract int BaseMaxHealth { get; }
         public abstract int BaseMaxMana { get; }
         public abstract int BasePhysicalDamage { get; }
