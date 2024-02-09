@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MongoWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" d:Background="White"
+      d:DesignHeight="450" d:DesignWidth="820" d:Background="White"
       Title="CharacterRedactorPage">
 
     <Grid>
-        <StackPanel x:Name="TitlePanel" Width="150" Margin="0 40 0 0">
+        <StackPanel x:Name="TitlePanel" Width="150" Margin="0 30 0 0">
             <StackPanel Orientation="Horizontal" Margin="0 0 0 5" HorizontalAlignment="Center">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -35,7 +35,7 @@
                 <TextBox Name="nameTB" Width="70" TextAlignment="Center" Text="{Binding Name}"></TextBox>
             </StackPanel>
         </StackPanel>
-        <StackPanel IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Margin="250 0 0 0" x:Name="StatPanel">
+        <StackPanel IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" Margin="250 120 0 0" x:Name="StatPanel">
             <StackPanel Margin="0 5">
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="strMinusBtn" Click="strMinusBtn_Click">-</Button>
@@ -81,12 +81,12 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="0 0 250 0" x:Name="SecondsStatsPanel">
+        <StackPanel HorizontalAlignment="Right" Orientation="Vertical" VerticalAlignment="Top" Margin="0 120 250 0" x:Name="SecondsStatsPanel">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="1 0 10 0">Health:</TextBlock>
                 <TextBlock Margin="0 0 10 0" x:Name="HealthTb" Text="{Binding MaxHealth}"></TextBlock>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                 <TextBlock Margin="1 0 10 0">Mana:</TextBlock>
                 <TextBlock Margin="0 0 0 0" x:Name="ManaTb" Text="{Binding MaxMana}"></TextBlock>
             </StackPanel>
@@ -115,16 +115,24 @@
                 <TextBlock Margin="0 0 10 0" x:Name="CritDmgTb" Text="{Binding CritDamage}"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 100" VerticalAlignment="Bottom">
-            <TextBlock>Оружие</TextBlock>
+        <StackPanel HorizontalAlignment="Center" Margin="0 0 0 90" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock>Оружие</TextBlock>
             <ComboBox Margin="5 0 0 0" Width="100" x:Name="WeaponCb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged" IsEnabled="False"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
+                <Button x:Name="DecreaseRarityBtn" Click="DecreaseRarityBtn_Click">-</Button>
+                <TextBlock Margin="5 0 0 0">Редкость:</TextBlock>
+                <TextBlock Margin="5 0 0 0" x:Name="RarityTb"></TextBlock>
+                <Button Margin="5 0 0 0" x:Name="IncreaseRarityBtn" Click="IncreaseRarityBtn_Click">+</Button>
+            </StackPanel>
         </StackPanel>
-        <StackPanel IsEnabled="False" x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 65">
+        <StackPanel IsEnabled="False" x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 55">
             <Button Margin="0 0 10 0" x:Name="Add100ExpBtn" Click="Add100ExpBtn_Click">+100</Button>
             <Button Margin="0 0 10 0" x:Name="Add500ExpBtn" Click="Add500ExpBtn_Click">+500</Button>
             <Button x:Name="Add1000ExpBtn" Click="Add1000ExpBtn_Click">+1000</Button>
         </StackPanel>
-        <StackPanel x:Name="SaveLoadPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 30">
+        <StackPanel x:Name="SaveLoadPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
             <Button Margin="0 0 10 0" x:Name="SaveBtn" Click="SaveBtn_Click" IsEnabled="False">Сохранить</Button>
             <Button Margin="0 0 10 0" x:Name="LoadBtn" Click="LoadBtn_Click">Загрузить</Button>
             <Button Margin="0 0 10 0" x:Name="ResetBtn" Click="ResetBtn_Click" IsEnabled="False">Сбросить</Button>

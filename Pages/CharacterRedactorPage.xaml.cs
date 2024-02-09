@@ -297,6 +297,23 @@ namespace MongoWPF
             Character.Weapon = (WeaponCb.SelectedItem as Weapon);
             DataContext = null;
             DataContext = Character;
+            RarityTb.Text = Character.Weapon.Rarity.ToString();
+        }
+
+        private void DecreaseRarityBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if((int)Character.Weapon.Rarity > 0)
+            {
+                RarityTb.Text = (--Character.Weapon.Rarity).ToString();
+            }
+        }
+
+        private void IncreaseRarityBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if ((int)Character.Weapon.Rarity < Enum.GetValues(typeof(WeaponRarity)).Length - 1)
+            {
+                RarityTb.Text = (++Character.Weapon.Rarity).ToString();
+            }
         }
     }
 }
