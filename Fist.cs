@@ -33,5 +33,9 @@ namespace MongoWPF.Weapons
         public override int CritChanse => 0;
 
         public override int CritDamage => 0;
+
+        public override bool IsShieldAvaliable => true;
+
+        public override bool IsDualAvaliable => false;
     }
 }

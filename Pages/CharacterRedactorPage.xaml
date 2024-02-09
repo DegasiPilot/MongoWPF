@@ -115,17 +115,31 @@
                 <TextBlock Margin="0 0 10 0" x:Name="CritDmgTb" Text="{Binding CritDamage}"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Margin="0 0 0 90" VerticalAlignment="Bottom">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock>Оружие</TextBlock>
-            <ComboBox Margin="5 0 0 0" Width="100" x:Name="WeaponCb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged" IsEnabled="False"></ComboBox>
+        <StackPanel HorizontalAlignment="Center" Margin="0 0 0 90" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock>Оружие 1:</TextBlock>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="WeaponCb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged" IsEnabled="False"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
+                    <Button x:Name="DecreaseRarityBtn" Click="DecreaseRarityBtn_Click">-</Button>
+                    <TextBlock Margin="5 0 0 0">Редкость:</TextBlock>
+                    <TextBlock Margin="5 0 0 0" x:Name="RarityTb" Width="60"></TextBlock>
+                    <Button Margin="5 0 0 0" x:Name="IncreaseRarityBtn" Click="IncreaseRarityBtn_Click">+</Button>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
-                <Button x:Name="DecreaseRarityBtn" Click="DecreaseRarityBtn_Click">-</Button>
-                <TextBlock Margin="5 0 0 0">Редкость:</TextBlock>
-                <TextBlock Margin="5 0 0 0" x:Name="RarityTb" Width="60"></TextBlock>
-                <Button Margin="5 0 0 0" x:Name="IncreaseRarityBtn" Click="IncreaseRarityBtn_Click">+</Button>
-            </StackPanel>
+            <!--<StackPanel Margin="15 0 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock>Оружие2: </TextBlock>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="Weapon2Cb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged" IsEnabled="False"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
+                    <Button x:Name="DecreaseRarity2Btn" Click="DecreaseRarity2Btn_Click">-</Button>
+                    <TextBlock Margin="5 0 0 0">Редкость:</TextBlock>
+                    <TextBlock Margin="5 0 0 0" x:Name="Rarity2Tb" Width="60"></TextBlock>
+                    <Button Margin="5 0 0 0" x:Name="IncreaseRarity2Btn" Click="IncreaseRarity2Btn_Click">+</Button>
+                </StackPanel>
+            </StackPanel>-->
         </StackPanel>
         <StackPanel IsEnabled="False" x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 55">
             <Button Margin="0 0 10 0" x:Name="Add100ExpBtn" Click="Add100ExpBtn_Click">+100</Button>
