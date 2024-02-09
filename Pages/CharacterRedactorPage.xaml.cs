@@ -62,7 +62,7 @@ namespace MongoWPF
         public Character Character { get; set; }
 
         private List<Character> classList = new List<Character>() { new Warrior(), new Rogue(), new Wizard()};
-        private List<Weapon> weaponList = new List<Weapon>() {new Fist(), new Wand()};
+        private List<Weapon> weaponList = new List<Weapon>() {new Fist(), new Axe(), new Dagger(), new Hammer(), new Sword(), new Wand()};
 
         public int currentStatPointsAmount;
         private int _oldStrength;

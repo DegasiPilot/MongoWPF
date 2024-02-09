@@ -18,8 +18,7 @@ namespace MongoWPF
         public static void RedactCharacter(Character character)
         {
             var collection = GetCharactersCollection();
-            Character redactableCharacter = collection.Find(x => x.Id == character.Id).First();
-            redactableCharacter = character;
+            collection.ReplaceOne(x => x.Id == character.Id, character);
         }
 
         public static Character GetCharacter(ObjectId Id)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MongoWPF.Weapons
 {
-    [BsonKnownTypes(typeof(Fist), typeof(Axe), typeof(Dagger), typeof(Hammer), typeof(Wand))]
+    [BsonKnownTypes(typeof(Fist), typeof(Axe), typeof(Dagger), typeof(Hammer), typeof(Sword), typeof(Wand))]
     public abstract class Weapon
     {
         public static Dictionary<WeaponRarity, int> RarityBonuses = new Dictionary<WeaponRarity, int>()

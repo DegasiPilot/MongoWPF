@@ -134,6 +134,7 @@
     <Compile Include="Weapons\Axe.cs" />
     <Compile Include="Weapons\Dagger.cs" />
     <Compile Include="Weapons\Hammer.cs" />
+    <Compile Include="Weapons\Sword.cs" />
     <Compile Include="Weapons\Wand.cs" />
     <Compile Include="Warrior.cs" />
     <Compile Include="Weapons\Weapon.cs" />
