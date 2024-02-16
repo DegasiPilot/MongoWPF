@@ -215,7 +215,7 @@ namespace MongoWPF
             SaveBtn.IsEnabled = true;
             ResetBtn.IsEnabled = true;
             DeleteBtn.IsEnabled = true;
-            WeaponCb.IsEnabled = true;
+            WeaponPanel.IsEnabled = true;
         }
 
         private void Add100ExpBtn_Click(object sender, RoutedEventArgs e)
@@ -315,7 +315,7 @@ namespace MongoWPF
 
         private void IncreaseRarityBtn_Click(object sender, RoutedEventArgs e)
         {
-            if ((int)Character.Weapon.Rarity < Enum.GetValues(typeof(WeaponRarity)).Length - 1)
+            if ((int)Character.Weapon.Rarity < Enum.GetValues(typeof(Rarity)).Length - 1)
             {
                 Character.Weapon.Rarity++;
                 RarityTb.Text = Character.Weapon.Rarity.ToString();

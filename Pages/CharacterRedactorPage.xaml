@@ -35,7 +35,7 @@
                 <TextBox Name="nameTB" Width="70" TextAlignment="Center" Text="{Binding Name}"></TextBox>
             </StackPanel>
         </StackPanel>
-        <StackPanel IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" Margin="250 120 0 0" x:Name="StatPanel">
+        <StackPanel IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical" Margin="0 120 100 0" x:Name="StatPanel">
             <StackPanel Margin="0 5">
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="strMinusBtn" Click="strMinusBtn_Click">-</Button>
@@ -81,7 +81,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Right" Orientation="Vertical" VerticalAlignment="Top" Margin="0 120 250 0" x:Name="SecondsStatsPanel">
+        <StackPanel HorizontalAlignment="Center" Orientation="Vertical" VerticalAlignment="Top" Margin="180 120 0 0" x:Name="SecondsStatsPanel">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="1 0 10 0">Health:</TextBlock>
                 <TextBlock Margin="0 0 10 0" x:Name="HealthTb" Text="{Binding MaxHealth}"></TextBlock>
@@ -116,10 +116,10 @@
             </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Margin="0 0 0 90" VerticalAlignment="Bottom" Orientation="Horizontal">
-            <StackPanel>
+            <StackPanel IsEnabled="False" x:Name="WeaponPanel">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock>Оружие 1:</TextBlock>
-                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="WeaponCb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged" IsEnabled="False"></ComboBox>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="WeaponCb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged"></ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
                     <Button x:Name="DecreaseRarityBtn" Click="DecreaseRarityBtn_Click">-</Button>

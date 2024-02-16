@@ -1,4 +1,4 @@
-﻿public enum WeaponRarity
+﻿public enum Rarity
 {
     Common = 0,
     Enchanted,

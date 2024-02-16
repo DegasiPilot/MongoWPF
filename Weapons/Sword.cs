@@ -10,25 +10,19 @@ namespace MongoWPF.Weapons
     {
         public override string Name => "Sword";
 
-        public override int Strength => 3 + RarityBonuses[Rarity];
+        public override int Strength => 3;
 
-        public override int Dexterity => 3 + RarityBonuses[Rarity];
+        public override int Dexterity => 3;
 
-        public override int Intelligence => 0;
+        public override int Intelligence => Rarity > Rarity.Common ? 4 : 0;
 
-        public override int Vitality => 0;
+        public override int Vitality => Rarity > Rarity.Common ? 4 : 0;
 
-        public override int MaxHealth => 0;
+        public override int MaxHealth => Rarity > Rarity.Enchanted ? 4 : 0;
 
-        public override int MaxMana => 0;
+        public override int MaxMana => Rarity > Rarity.Enchanted ? 4 : 0;
 
-        public override int PhysicalDamage => 5 + RarityBonuses[Rarity];
-
-        public override int Armor => 0;
-
-        public override int MagicDamage => 0;
-
-        public override int MagicDefence => 0;
+        public override int PhysicalDamage => 5;
 
         public override int CritChanse => 35;
 

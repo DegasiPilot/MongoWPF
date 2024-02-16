@@ -8,36 +8,13 @@ using System.Threading.Tasks;
 namespace MongoWPF.Weapons
 {
     [BsonKnownTypes(typeof(Fist), typeof(Axe), typeof(Dagger), typeof(Hammer), typeof(Sword), typeof(Wand))]
-    public abstract class Weapon
+    public abstract class Weapon : Item
     {
-        public static readonly Dictionary<WeaponRarity, int> RarityBonuses = new Dictionary<WeaponRarity, int>()
-        {
-            {WeaponRarity.Common , 0 },
-            {WeaponRarity.Enchanted, 2 },
-            {WeaponRarity.Rare, 4 }
-        };
-
         public const float TwoHandledBonus = 1.7f;
 
-        public abstract string Name { get; }
-        public WeaponRarity Rarity = WeaponRarity.Common;
         public bool IsTwoHanded;
 
         public abstract bool IsShieldAvaliable { get; }
         public abstract bool IsDualAvaliable { get; }
-
-        public abstract int Strength { get; }
-        public abstract int Dexterity { get; }
-        public abstract int Intelligence { get; }
-        public abstract int Vitality { get; }
-
-        public abstract int MaxHealth { get; }
-        public abstract int MaxMana { get; }
-        public abstract int PhysicalDamage { get; }
-        public abstract int Armor { get; }
-        public abstract int MagicDamage { get; }
-        public abstract int MagicDefence { get; }
-        public abstract int CritChanse { get; }
-        public abstract int CritDamage { get; }
     }
 }
