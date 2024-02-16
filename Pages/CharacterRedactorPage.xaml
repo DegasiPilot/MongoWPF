@@ -115,8 +115,8 @@
                 <TextBlock Margin="0 0 10 0" x:Name="CritDmgTb" Text="{Binding CritDamage}"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Margin="0 0 0 90" VerticalAlignment="Bottom" Orientation="Horizontal">
-            <StackPanel IsEnabled="False" x:Name="WeaponPanel">
+        <StackPanel HorizontalAlignment="Center" Margin="0 0 0 90" VerticalAlignment="Bottom" Orientation="Horizontal" x:Name="ItemsPanel" IsEnabled="False">
+            <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock>Оружие 1:</TextBlock>
                     <ComboBox Margin="5 0 0 0" Width="100" x:Name="WeaponCb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged"></ComboBox>
@@ -128,18 +128,46 @@
                     <Button Margin="5 0 0 0" x:Name="IncreaseRarityBtn" Click="IncreaseRarityBtn_Click">+</Button>
                 </StackPanel>
             </StackPanel>
-            <!--<StackPanel Margin="15 0 0 0">
+            <StackPanel Margin="15 0 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock>Броня:</TextBlock>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="ArmorCb" DisplayMemberPath="Name" SelectionChanged="ArmorCb_SelectionChanged"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock>Кольцо:</TextBlock>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="КштпCb" DisplayMemberPath="Name" SelectionChanged="RingCb_SelectionChanged"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock>Aмулет:</TextBlock>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="AmuletCb" DisplayMemberPath="Name" SelectionChanged="AmuletCb_SelectionChanged"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="ShieldPanel" Margin="15 0 0 0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock>Оружие2: </TextBlock>
-                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="Weapon2Cb" DisplayMemberPath="Name" SelectionChanged="WeaponCb_SelectionChanged" IsEnabled="False"></ComboBox>
+                    <TextBlock>Щит:</TextBlock>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="ShieldCb" DisplayMemberPath="Name" SelectionChanged="ShieldCb_SelectionChanged"></ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
-                    <Button x:Name="DecreaseRarity2Btn" Click="DecreaseRarity2Btn_Click">-</Button>
-                    <TextBlock Margin="5 0 0 0">Редкость:</TextBlock>
-                    <TextBlock Margin="5 0 0 0" x:Name="Rarity2Tb" Width="60"></TextBlock>
-                    <Button Margin="5 0 0 0" x:Name="IncreaseRarity2Btn" Click="IncreaseRarity2Btn_Click">+</Button>
+                    <Button x:Name="DecreaseShieldLevelBtn" Click="DecreaseShieldLevelBtn_Click">-</Button>
+                    <TextBlock Margin="5 0 0 0">Уровень:</TextBlock>
+                    <TextBlock Margin="5 0 0 0" x:Name="ShieldLevelTb" Width="10"></TextBlock>
+                    <Button Margin="5 0 0 0" x:Name="IncreaseShieldLevelBtn" Click="IncreaseShieldLevelBtn_Click">+</Button>
                 </StackPanel>
-            </StackPanel>-->
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock> Шлем:</TextBlock>
+                    <ComboBox Margin="5 0 0 0" Width="100" x:Name="HealmetCb" DisplayMemberPath="Name" SelectionChanged="HealmetCb_SelectionChanged"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
+                    <Button x:Name="DecreaseHealmetLevelBtn" Click="DecreaseHealmetLevelBtn_Click">-</Button>
+                    <TextBlock Margin="5 0 0 0">Уровень:</TextBlock>
+                    <TextBlock Margin="5 0 0 0" x:Name="HealmetLevelTb" Width="10"></TextBlock>
+                    <Button Margin="5 0 0 0" x:Name="IncreaseHealmetLevelBtn" Click="IncreaseHealmetLevelBtn_Click">+</Button>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
         <StackPanel IsEnabled="False" x:Name="ExpBtnPanel" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 55">
             <Button Margin="0 0 10 0" x:Name="Add100ExpBtn" Click="Add100ExpBtn_Click">+100</Button>

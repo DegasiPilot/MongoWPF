@@ -1,4 +1,4 @@
-﻿namespace MongoWPF.Equipment
+﻿namespace MongoWPF.Equipments
 {
     internal class Ring : Equipment
     {

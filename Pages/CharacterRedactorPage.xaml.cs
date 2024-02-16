@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MongoWPF.Weapons;
+using MongoWPF.Equipments;
 
 namespace MongoWPF
 {
@@ -66,6 +58,7 @@ namespace MongoWPF
 
         private List<Character> classList = new List<Character>() { new Warrior(), new Rogue(), new Wizard()};
         private List<Weapon> weaponList = new List<Weapon>() {new Fist(), new Axe(), new Dagger(), new Hammer(), new Sword(), new Wand()};
+        private List<Equipment> equipmentList = new List<Equipment>() { new Equipment(), new ChainArmor(), new LeatherArmor(), new PlateArmor(), new Robe() };
 
         public int currentStatPointsAmount;
         private int _oldStrength;
@@ -74,7 +67,7 @@ namespace MongoWPF
         private int _oldVitality;
 
         public string statPointsAsString => currentStatPointsAmount.ToString();
-        public bool CanAddExp => Character.UnSpentedStatPoints == currentStatPointsAmount;
+        public bool CanAddExp => !ClassChoisePanel.IsEnabled && Character.UnSpentedStatPoints == currentStatPointsAmount;
 
         private void strMinusBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -215,7 +208,7 @@ namespace MongoWPF
             SaveBtn.IsEnabled = true;
             ResetBtn.IsEnabled = true;
             DeleteBtn.IsEnabled = true;
-            WeaponPanel.IsEnabled = true;
+            ItemsPanel.IsEnabled = true;
         }
 
         private void Add100ExpBtn_Click(object sender, RoutedEventArgs e)
@@ -322,6 +315,51 @@ namespace MongoWPF
             }
             DataContext = null;
             DataContext = Character;
+        }
+
+        private void ArmorCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RingCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void AmuletCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ShieldCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DecreaseShieldLevelBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void IncreaseShieldLevelBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HealmetCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DecreaseHealmetLevelBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void IncreaseHealmetLevelBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

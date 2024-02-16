@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MongoWPF.Equipment
+namespace MongoWPF.Equipments
 {
     internal class Shield : Equipment
     {
