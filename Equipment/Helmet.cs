@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MongoWPF.Equipment
+﻿namespace MongoWPF.Equipment
 {
-    internal class Helmet
+    internal class Helmet : Equipment
     {
+        public override string Name => "Helmet";
+        public int level = 1;
+
+        public override int Armor => 3 * level;
+        public override int MaxHealth => 2 * level;
+
+        public override int RequirementStrength => 15 * level;
     }
 }
